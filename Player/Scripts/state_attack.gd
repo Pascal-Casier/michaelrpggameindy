@@ -9,7 +9,7 @@ var attacking := false
 @onready var attack_anim: AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
 @onready var walk: State = $"../walk"
 @onready var idle: State = $"../idle"
-@onready var hurt_box: HurtBox = $"../../Interactions/HurtBox"
+@onready var hurt_box: HurtBox = %AttackHurtBox
 
 
 func enter() -> void:
