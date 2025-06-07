@@ -1,20 +1,30 @@
 class_name Player extends CharacterBody2D
 
+signal DirectionChanged (new_direction : Vector2)
+signal Player_damaged(hurt_box : HurtBox)
+
 var cardinal_direction := Vector2.DOWN
 const DIR_4 := [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 var direction := Vector2.ZERO
 
+var invulnerable := false
+var hp := 6
+var max_hp := 6
+
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
+@onready var hit_box: HitBox = $HitBox
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
-signal DirectionChanged (new_direction : Vector2)
 
 func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.initialize(self)
+	hit_box.Damaged.connect(_take_damage)
+	update_hp(99)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	direction = Vector2(
@@ -22,7 +32,7 @@ func _process(delta: float) -> void:
 		Input.get_axis("up", "down")
 	).normalized()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func set_direction() -> bool:
@@ -53,9 +63,30 @@ func anim_direction() -> String:
 		return "side"
 		
 		
+func _take_damage(hurt_box : HurtBox) -> void:
+	if invulnerable:
+		return
+	else:
+		update_hp(-hurt_box.damage)
+	if hp > 0:
+		Player_damaged.emit(hurt_box)
+	else:
+		Player_damaged.emit(hurt_box)
+		update_hp(99)
+	pass		
 		
-		
-		
+func update_hp(delta : int) -> void:
+	hp  = clampi(hp + delta, 0, max_hp)
+	
+func make_invulnerable(_duration : float = 1.0) -> void:
+	invulnerable = true
+	hit_box.monitoring = false
+	
+	await get_tree().create_timer(_duration).timeout
+	
+	invulnerable = false
+	hit_box.monitoring = true
+	pass
 		
 		
 		
