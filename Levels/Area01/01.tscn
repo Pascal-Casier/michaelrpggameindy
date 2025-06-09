@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3d3cd4t5o28t"]
+[gd_scene load_steps=11 format=3 uid="uid://b3d3cd4t5o28t"]
 
 [ext_resource type="Script" uid="uid://cflv1i2ia3jge" path="res://Levels/Scripts/level.gd" id="1_22ele"]
 [ext_resource type="PackedScene" uid="uid://c6nq37vmyij6p" path="res://TileMaps/grass01.tscn" id="1_vbl6q"]
 [ext_resource type="PackedScene" uid="uid://ben7wxsmq6ih" path="res://Levels/Player_spawn.tscn" id="2_chooo"]
 [ext_resource type="PackedScene" uid="uid://ctfondiw6usng" path="res://Enemies/Slime/slime.tscn" id="4_pwydo"]
 [ext_resource type="PackedScene" uid="uid://c42upklxpt6mk" path="res://Levels/level_transition.tscn" id="5_8itkk"]
+[ext_resource type="PackedScene" uid="uid://dtohq41yxi87g" path="res://Items/Item_pickup/item_pickup.tscn" id="6_xhij5"]
+[ext_resource type="Resource" uid="uid://b3wrvqdhoqrex" path="res://Items/gem.tres" id="7_th3kk"]
+[ext_resource type="Resource" uid="uid://bucaencnhxirk" path="res://Items/potion.tres" id="8_b60gt"]
+[ext_resource type="Resource" uid="uid://dshvlafdiqnm6" path="res://Items/stone.tres" id="9_f2d14"]
+[ext_resource type="Resource" uid="uid://422qaas2n6nn" path="res://Items/apple.tres" id="10_f2d14"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_22ele")
@@ -33,3 +38,23 @@ side = 3
 position = Vector2(544, 160)
 level = "uid://cg6udu48dhm0h"
 side = 1
+
+[node name="ItemPickup" parent="." instance=ExtResource("6_xhij5")]
+position = Vector2(291, 128)
+item_data = ExtResource("7_th3kk")
+
+[node name="ItemPickup2" parent="." instance=ExtResource("6_xhij5")]
+position = Vector2(344, 89)
+item_data = ExtResource("8_b60gt")
+
+[node name="ItemPickup3" parent="." instance=ExtResource("6_xhij5")]
+position = Vector2(230, 88)
+item_data = ExtResource("9_f2d14")
+
+[node name="ItemPickup4" parent="." instance=ExtResource("6_xhij5")]
+position = Vector2(192, 177)
+item_data = ExtResource("10_f2d14")
+
+[node name="ItemPickup5" parent="." instance=ExtResource("6_xhij5")]
+position = Vector2(258, 217)
+item_data = ExtResource("10_f2d14")
