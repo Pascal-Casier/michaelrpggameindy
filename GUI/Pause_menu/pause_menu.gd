@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var button_save: Button = $VBoxContainer/Button_Save
-@onready var button_load: Button = $VBoxContainer/Button_Load
+@onready var button_save: Button = $HBoxContainer/Button_Save
+@onready var button_load: Button = $HBoxContainer/Button_Load
 
 var is_paused := false
 
