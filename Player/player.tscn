@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://f5h6yla7xvs3"]
+[gd_scene load_steps=55 format=3 uid="uid://f5h6yla7xvs3"]
 
 [ext_resource type="Script" uid="uid://8jyex048iqmr" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://ctop4c1e5ap83" path="res://Player/Sprites/Indyrun_0_000.png" id="1_l8h54"]
@@ -1244,6 +1244,8 @@ _data = {
 &"walk_up": SubResource("Animation_00tjw")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mwp6"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_755ss"]
 radius = 12.0416
 
@@ -1393,6 +1395,16 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("19_n471f")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+position = Vector2(0, 10)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+shape = SubResource("RectangleShape2D_8mwp6")
+debug_color = Color(0.0402357, 0.908854, 0.216674, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("23_qemgg")]
 collision_layer = 2
