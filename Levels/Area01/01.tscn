@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3d3cd4t5o28t"]
+[gd_scene load_steps=10 format=3 uid="uid://b3d3cd4t5o28t"]
 
 [ext_resource type="Script" uid="uid://cflv1i2ia3jge" path="res://Levels/Scripts/level.gd" id="1_22ele"]
 [ext_resource type="PackedScene" uid="uid://c6nq37vmyij6p" path="res://TileMaps/grass01.tscn" id="1_vbl6q"]
 [ext_resource type="PackedScene" uid="uid://ben7wxsmq6ih" path="res://Levels/Player_spawn.tscn" id="2_chooo"]
-[ext_resource type="PackedScene" uid="uid://ctfondiw6usng" path="res://Enemies/Slime/slime.tscn" id="4_pwydo"]
 [ext_resource type="PackedScene" uid="uid://c42upklxpt6mk" path="res://Levels/level_transition.tscn" id="5_8itkk"]
 [ext_resource type="PackedScene" uid="uid://dtohq41yxi87g" path="res://Items/Item_pickup/item_pickup.tscn" id="6_xhij5"]
 [ext_resource type="Resource" uid="uid://b3wrvqdhoqrex" path="res://Items/gem.tres" id="7_th3kk"]
 [ext_resource type="Resource" uid="uid://bucaencnhxirk" path="res://Items/potion.tres" id="8_b60gt"]
 [ext_resource type="PackedScene" uid="uid://dnl0twilejys2" path="res://Interactables/Treasure_chest/treasure_chest.tscn" id="8_th3kk"]
-[ext_resource type="Resource" uid="uid://dshvlafdiqnm6" path="res://Items/stone.tres" id="9_f2d14"]
+[ext_resource type="PackedScene" uid="uid://c2tjvrh12hg77" path="res://Enemies/goblin/goblin.tscn" id="9_b60gt"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_22ele")
@@ -19,15 +18,6 @@ layer_0/tile_data = PackedInt32Array(-65539, 655360, 4, -3, 655360, 5, 65533, 65
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_chooo")]
 position = Vector2(479, 38)
-
-[node name="Slime" parent="." instance=ExtResource("4_pwydo")]
-position = Vector2(156, 94)
-
-[node name="Slime2" parent="." instance=ExtResource("4_pwydo")]
-position = Vector2(119, 232)
-
-[node name="Slime3" parent="." instance=ExtResource("4_pwydo")]
-position = Vector2(371, 243)
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_8itkk")]
 position = Vector2(256, 320)
@@ -47,12 +37,6 @@ item_data = ExtResource("7_th3kk")
 position = Vector2(260, 54)
 item_data = ExtResource("8_b60gt")
 
-[node name="TreasureChest2" parent="." instance=ExtResource("8_th3kk")]
-position = Vector2(324, 54)
-item_data = ExtResource("7_th3kk")
-quantity = 10
-
-[node name="TreasureChest3" parent="." instance=ExtResource("8_th3kk")]
-position = Vector2(389, 54)
-item_data = ExtResource("9_f2d14")
-quantity = 4
+[node name="Goblin" parent="." instance=ExtResource("9_b60gt")]
+position = Vector2(58, 28)
+scale = Vector2(2, 2)
