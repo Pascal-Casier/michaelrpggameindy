@@ -49,6 +49,8 @@ item_data = ExtResource("8_b60gt")
 
 [node name="TreasureChest2" parent="." instance=ExtResource("8_th3kk")]
 position = Vector2(324, 54)
+item_data = ExtResource("7_th3kk")
+quantity = 10
 
 [node name="TreasureChest3" parent="." instance=ExtResource("8_th3kk")]
 position = Vector2(389, 54)

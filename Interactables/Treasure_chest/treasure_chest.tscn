@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnl0twilejys2"]
+[gd_scene load_steps=14 format=3 uid="uid://dnl0twilejys2"]
 
 [ext_resource type="Script" uid="uid://djl87h8j4r8o4" path="res://Interactables/Treasure_chest/treasure-chest.gd" id="1_g3sa6"]
 [ext_resource type="Texture2D" uid="uid://8jrewy8mbpfv" path="res://Interactables/Treasure_chest/treasure-chest.png" id="2_g7syy"]
 [ext_resource type="Texture2D" uid="uid://cgtwvam2xfrc6" path="res://Items/Sprites/items.png" id="3_pddku"]
 [ext_resource type="AudioStream" uid="uid://b0t5y1bninkdj" path="res://Interactables/Treasure_chest/treasure-open.wav" id="4_g7syy"]
+[ext_resource type="PackedScene" uid="uid://cjfxeja60o3aj" path="res://GeneralNodes/PersistentDataHandler/persistent_data_handler.tscn" id="5_pddku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2bfbm"]
 atlas = ExtResource("3_pddku")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="Animation" id="Animation_g3sa6"]
-resource_name = "closed"
+[sub_resource type="Animation" id="Animation_2bfbm"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,14 +31,38 @@ tracks/1/path = NodePath("ItemSprite:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItemSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItemSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(2, 2, 2, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_g7syy"]
-resource_name = "opened"
+[sub_resource type="Animation" id="Animation_g3sa6"]
+resource_name = "closed"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -48,7 +73,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -112,7 +137,7 @@ tracks/3/path = NodePath("ItemSprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.166667, 0.366667, 0.533333, 1.5),
+"times": PackedFloat32Array(0.166667, 0.366667, 0.533333, 1.46667),
 "transitions": PackedFloat32Array(0.5, -2, 2, 1),
 "update": 0,
 "values": [Vector2(0, -10), Vector2(0, -60), Vector2(0, -45), Vector2(0, -45)]
@@ -124,14 +149,14 @@ tracks/4/path = NodePath("ItemSprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.266667, 0.366667, 0.533333, 1.03333, 1.5),
+"times": PackedFloat32Array(0.266667, 0.366667, 0.533333, 1.03333, 1.46667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(2, 2, 2, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_2bfbm"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_g7syy"]
+resource_name = "opened"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -142,7 +167,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -151,34 +176,10 @@ tracks/1/path = NodePath("ItemSprite:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ItemSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -10)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ItemSprite:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(2, 2, 2, 1)]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pddku"]
@@ -216,7 +217,6 @@ offset_bottom = 12.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 10
-text = "x99"
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -244,3 +244,5 @@ monitorable = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_rcgk4")
 debug_color = Color(0.0734693, 0.674479, 0.0439114, 0.42)
+
+[node name="IsOpen" parent="." instance=ExtResource("5_pddku")]
