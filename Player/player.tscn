@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://f5h6yla7xvs3"]
+[gd_scene load_steps=57 format=3 uid="uid://f5h6yla7xvs3"]
 
 [ext_resource type="Script" uid="uid://8jyex048iqmr" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://ctop4c1e5ap83" path="res://Player/Sprites/Indyrun_0_000.png" id="1_l8h54"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://du7kbdcxraxe5" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="19_o28un"]
 [ext_resource type="Script" uid="uid://bljut75ac08ly" path="res://Player/Scripts/PlayerCamera.gd" id="20_7emwf"]
 [ext_resource type="Script" uid="uid://nk6o2km63nup" path="res://Player/Scripts/state_stun.gd" id="20_8mwp6"]
+[ext_resource type="Script" uid="uid://duqcr38exyane" path="res://Player/Scripts/push_area.gd" id="23_8viyr"]
 [ext_resource type="PackedScene" uid="uid://4qgndu0x7shn" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="23_qemgg"]
 [ext_resource type="AudioStream" uid="uid://cm85tv6ao5xyo" path="res://Player/Audio/hit_player.wav" id="24_8viyr"]
 
@@ -1246,6 +1247,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mwp6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm0op"]
+size = Vector2(20, 15)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_755ss"]
 radius = 12.0416
 
@@ -1405,6 +1409,18 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
 shape = SubResource("RectangleShape2D_8mwp6")
 debug_color = Color(0.0402357, 0.908854, 0.216674, 0.42)
+
+[node name="PushArea" type="Area2D" parent="Interactions"]
+position = Vector2(0, 10)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("23_8viyr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_sm0op")
+debug_color = Color(0.868138, 0.0402357, 0.908854, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("23_qemgg")]
 collision_layer = 2

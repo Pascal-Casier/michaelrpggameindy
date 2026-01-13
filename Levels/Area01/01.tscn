@@ -22,13 +22,11 @@ position = Vector2(356, 211)
 [node name="LevelTransition" parent="." instance=ExtResource("5_8itkk")]
 position = Vector2(256, 320)
 level = "uid://dan7um7evubrt"
-center_player = null
 side = 3
 
 [node name="LevelTransition2" parent="." instance=ExtResource("5_8itkk")]
 position = Vector2(544, 160)
 level = "uid://cg6udu48dhm0h"
-center_player = null
 side = 1
 
 [node name="LevelTransition3" parent="." instance=ExtResource("5_8itkk")]
