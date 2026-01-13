@@ -1,16 +1,17 @@
-class_name Enemy extends CharacterBody2D
+class_name Enemy
+extends CharacterBody2D
 
-signal direction_changed (new_direction : Vector2)
-signal enemy_damaged(hurt_box : HurtBox)
-signal enemy_destroyed(hurt_box : HurtBox)
+signal direction_changed(new_direction: Vector2)
+signal enemy_damaged(hurt_box: HurtBox)
+signal enemy_destroyed(hurt_box: HurtBox)
 
 const DIR_4 := [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @export var hp := 3
 
-var cardinal_direction : Vector2 = Vector2.DOWN
+var cardinal_direction: Vector2 = Vector2.DOWN
 var direction := Vector2.ZERO
-var player : Player
+var player: Player
 var invulnerable := false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -18,33 +19,28 @@ var invulnerable := false
 @onready var state_machine: Node = $EnemyStateMachine
 @onready var hit_box: HitBox = $HitBox
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	state_machine.initialize(self)
 	player = PlayerManager.player
+	if player == null:
+		push_warning("Player not found in PlayerManager")
 	hit_box.Damaged.connect(_take_damage)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
-func set_direction(_new_direction : Vector2) -> bool:
+func set_direction(_new_direction: Vector2) -> bool:
 	direction = _new_direction
 	if direction == Vector2.ZERO:
 		return false
 		
-	var direction_id := int(round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size()))
+	var direction_id := int(round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size())) % DIR_4.size()
 	var new_dir = DIR_4[direction_id]
 	
 	if new_dir == cardinal_direction:
 		return false
+		
 	cardinal_direction = new_dir
-	
 	direction_changed.emit(new_dir)
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
@@ -59,8 +55,8 @@ func anim_direction() -> String:
 		return "up"
 	else:
 		return "side"
-
-func _take_damage(hurt_box : HurtBox) ->void:
+		
+func _take_damage(hurt_box: HurtBox) -> void:
 	if invulnerable:
 		return
 	hp -= hurt_box.damage
