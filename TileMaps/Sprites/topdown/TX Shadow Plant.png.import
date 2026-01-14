@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brcpc12lg7we5"
-path="res://.godot/imported/dungeon_props.png-efac48749301c019019c6b8d3f2e2326.ctex"
+uid="uid://d0jln1efpb7y0"
+path="res://.godot/imported/TX Shadow Plant.png-3d392966d9fae0a729eab73d942a5844.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interactables/dungeon/dungeon_props.png"
-dest_files=["res://.godot/imported/dungeon_props.png-efac48749301c019019c6b8d3f2e2326.ctex"]
+source_file="res://TileMaps/Sprites/topdown/TX Shadow Plant.png"
+dest_files=["res://.godot/imported/TX Shadow Plant.png-3d392966d9fae0a729eab73d942a5844.ctex"]
 
 [params]
 

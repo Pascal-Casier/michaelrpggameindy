@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brcpc12lg7we5"
-path="res://.godot/imported/dungeon_props.png-efac48749301c019019c6b8d3f2e2326.ctex"
+uid="uid://n4jrn6lf3hx3"
+path="res://.godot/imported/TX Tileset Grass.png-959b4725304fd1dfd53579ce373d7b09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interactables/dungeon/dungeon_props.png"
-dest_files=["res://.godot/imported/dungeon_props.png-efac48749301c019019c6b8d3f2e2326.ctex"]
+source_file="res://TileMaps/Sprites/topdown/TX Tileset Grass.png"
+dest_files=["res://.godot/imported/TX Tileset Grass.png-959b4725304fd1dfd53579ce373d7b09.ctex"]
 
 [params]
 
