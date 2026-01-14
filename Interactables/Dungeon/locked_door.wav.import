@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d6kp1g31bhbf"
-path="res://.godot/imported/locked_door.wav-819a5e0719753c1869fd6bc3b8863078.sample"
+path="res://.godot/imported/locked_door.wav-da47210b65a732f2368c1254eba67913.sample"
 
 [deps]
 
-source_file="res://TileMaps/Sprites/locked_door.wav"
-dest_files=["res://.godot/imported/locked_door.wav-819a5e0719753c1869fd6bc3b8863078.sample"]
+source_file="res://Interactables/Dungeon/locked_door.wav"
+dest_files=["res://.godot/imported/locked_door.wav-da47210b65a732f2368c1254eba67913.sample"]
 
 [params]
 

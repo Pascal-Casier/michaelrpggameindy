@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://j1snivkovlw8"]
+
+[ext_resource type="Script" uid="uid://dry1kcde7vhps" path="res://Items/Item_effects/item_effect.gd" id="1_tdgsu"]
+[ext_resource type="Script" uid="uid://cewetx3vqsma4" path="res://Items/Scripts/item_data.gd" id="2_u6d1n"]
+[ext_resource type="Texture2D" uid="uid://cgtwvam2xfrc6" path="res://Items/Sprites/items.png" id="3_u6d1n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1yal"]
+atlas = ExtResource("3_u6d1n")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_u6d1n")
+name = "Dungeon Key"
+description = "On dirait un clé. Qui sait quelle porte elle ouvre ?"
+texture = SubResource("AtlasTexture_y1yal")
+effects = Array[ExtResource("1_tdgsu")]([])
+metadata/_custom_type_script = "uid://cewetx3vqsma4"

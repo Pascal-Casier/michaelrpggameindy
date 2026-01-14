@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://h05wtmyc3317"
-path="res://.godot/imported/unlock_door.wav-759f3d68de4823bc38df8ff6b1b20a73.sample"
+path="res://.godot/imported/unlock_door.wav-e032753e5d9c78980845360334fc3095.sample"
 
 [deps]
 
-source_file="res://TileMaps/Sprites/unlock_door.wav"
-dest_files=["res://.godot/imported/unlock_door.wav-759f3d68de4823bc38df8ff6b1b20a73.sample"]
+source_file="res://Interactables/Dungeon/unlock_door.wav"
+dest_files=["res://.godot/imported/unlock_door.wav-e032753e5d9c78980845360334fc3095.sample"]
 
 [params]
 

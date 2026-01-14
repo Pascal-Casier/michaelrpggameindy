@@ -33,4 +33,3 @@ func unparent_player(_p : Node2D) -> void:
 	_p.remove_child(player)
 	
 	
-	
