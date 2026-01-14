@@ -16,6 +16,7 @@ var max_hp := 6
 @onready var hit_box: HitBox = $HitBox
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
+@onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 
 
 func _ready() -> void:

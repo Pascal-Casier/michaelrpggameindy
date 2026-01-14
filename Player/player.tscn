@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://f5h6yla7xvs3"]
+[gd_scene load_steps=58 format=3 uid="uid://f5h6yla7xvs3"]
 
 [ext_resource type="Script" uid="uid://8jyex048iqmr" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://ctop4c1e5ap83" path="res://Player/Sprites/Indyrun_0_000.png" id="1_l8h54"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://duqcr38exyane" path="res://Player/Scripts/push_area.gd" id="23_8viyr"]
 [ext_resource type="PackedScene" uid="uid://4qgndu0x7shn" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="23_qemgg"]
 [ext_resource type="AudioStream" uid="uid://cm85tv6ao5xyo" path="res://Player/Audio/hit_player.wav" id="24_8viyr"]
+[ext_resource type="Script" uid="uid://b3uwvy1wroblb" path="res://Player/Scripts/Abilities/abilities.gd" id="26_8viyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
@@ -1395,7 +1396,7 @@ script = ExtResource("20_7emwf")
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
-max_polyphony = 4
+max_polyphony = 6
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("19_n471f")
@@ -1434,3 +1435,6 @@ debug_color = Color(0.705555, 0.815104, 0.0360853, 0.42)
 libraries = {
 &"": SubResource("AnimationLibrary_j2n6q")
 }
+
+[node name="Abilities" type="Node" parent="."]
+script = ExtResource("26_8viyr")
