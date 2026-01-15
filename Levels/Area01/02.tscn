@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dan7um7evubrt"]
+[gd_scene load_steps=10 format=3 uid="uid://dan7um7evubrt"]
 
 [ext_resource type="Script" uid="uid://cflv1i2ia3jge" path="res://Levels/Scripts/level.gd" id="1_wi5as"]
 [ext_resource type="PackedScene" uid="uid://c6nq37vmyij6p" path="res://TileMaps/grass01.tscn" id="1_x70af"]
+[ext_resource type="AudioStream" uid="uid://d16hdyfkbnp2p" path="res://Levels/Music/example_music_01.ogg" id="2_icgqb"]
 [ext_resource type="Texture2D" uid="uid://cwt7pu2lw2pi5" path="res://TileMaps/Sprites/Grass-01.png" id="2_tek06"]
 [ext_resource type="PackedScene" uid="uid://ben7wxsmq6ih" path="res://Levels/Player_spawn.tscn" id="3_mwxiv"]
 [ext_resource type="PackedScene" uid="uid://ctfondiw6usng" path="res://Enemies/Slime/slime.tscn" id="5_icgqb"]
@@ -479,6 +480,7 @@ sources/0 = SubResource("TileSetAtlasSource_wi5as")
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_wi5as")
+music = ExtResource("2_icgqb")
 
 [node name="Grass01" parent="." instance=ExtResource("1_x70af")]
 tile_set = SubResource("TileSet_icgqb")
