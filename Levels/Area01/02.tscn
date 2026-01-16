@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dan7um7evubrt"]
+[gd_scene load_steps=14 format=3 uid="uid://dan7um7evubrt"]
 
 [ext_resource type="Script" uid="uid://cflv1i2ia3jge" path="res://Levels/Scripts/level.gd" id="1_wi5as"]
 [ext_resource type="PackedScene" uid="uid://c6nq37vmyij6p" path="res://TileMaps/grass01.tscn" id="1_x70af"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ben7wxsmq6ih" path="res://Levels/Player_spawn.tscn" id="3_mwxiv"]
 [ext_resource type="PackedScene" uid="uid://ctfondiw6usng" path="res://Enemies/Slime/slime.tscn" id="5_icgqb"]
 [ext_resource type="PackedScene" uid="uid://c42upklxpt6mk" path="res://Levels/level_transition.tscn" id="6_ua1y0"]
+[ext_resource type="PackedScene" uid="uid://b7ihrhi0sktkw" path="res://Npc/npc.tscn" id="8_ua1y0"]
+[ext_resource type="PackedScene" uid="uid://dvi5q20aa4spg" path="res://Npc/npc_behavior_wander.tscn" id="9_jeo2k"]
+[ext_resource type="Resource" uid="uid://kcil0mst7dw1" path="res://Npc/00_npcs/npc_01.tres" id="9_krbdk"]
+[ext_resource type="Resource" uid="uid://dafjfnhy8ird2" path="res://Npc/00_npcs/npc_02.tres" id="11_q5iyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wi5as"]
 texture = ExtResource("2_tek06")
@@ -502,3 +506,17 @@ position = Vector2(371, 243)
 position = Vector2(256, -64)
 level = "uid://b3d3cd4t5o28t"
 side = 2
+
+[node name="Npc" parent="." instance=ExtResource("8_ua1y0")]
+position = Vector2(217, 126)
+npc_resource = ExtResource("9_krbdk")
+
+[node name="NpcBehaviorWander" parent="Npc" instance=ExtResource("9_jeo2k")]
+wander_range = 4
+wander_speed = 45.0
+wander_duration = 5.0
+idle_duration = 1.0
+
+[node name="Npc2" parent="." instance=ExtResource("8_ua1y0")]
+position = Vector2(407, 149)
+npc_resource = ExtResource("11_q5iyu")
