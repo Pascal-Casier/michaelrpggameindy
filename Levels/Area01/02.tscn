@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dan7um7evubrt"]
+[gd_scene load_steps=22 format=3 uid="uid://dan7um7evubrt"]
 
 [ext_resource type="Script" uid="uid://cflv1i2ia3jge" path="res://Levels/Scripts/level.gd" id="1_wi5as"]
 [ext_resource type="PackedScene" uid="uid://c6nq37vmyij6p" path="res://TileMaps/grass01.tscn" id="1_x70af"]
@@ -10,9 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://b7ihrhi0sktkw" path="res://Npc/npc.tscn" id="8_ua1y0"]
 [ext_resource type="PackedScene" uid="uid://dvi5q20aa4spg" path="res://Npc/npc_behavior_wander.tscn" id="9_jeo2k"]
 [ext_resource type="Resource" uid="uid://kcil0mst7dw1" path="res://Npc/00_npcs/npc_01.tres" id="9_krbdk"]
+[ext_resource type="PackedScene" uid="uid://bfvvrjhbrelr0" path="res://Interactables/Dialog/dialog_interaction.tscn" id="11_isjcn"]
 [ext_resource type="Resource" uid="uid://dafjfnhy8ird2" path="res://Npc/00_npcs/npc_02.tres" id="11_q5iyu"]
+[ext_resource type="Script" uid="uid://b883k1ua3mdgm" path="res://Interactables/Dialog/Scripts/dialog_text.gd" id="12_mxs1d"]
 [ext_resource type="PackedScene" uid="uid://bs7enwvpf2h5k" path="res://Npc/npc_behavior_patrol.tscn" id="12_r3wde"]
 [ext_resource type="PackedScene" uid="uid://be64c8ecs81vu" path="res://Npc/patrol_location.tscn" id="13_isjcn"]
+[ext_resource type="Texture2D" uid="uid://djxvhjtt1ueb4" path="res://Npc/sprites/portraits/hero_portrait.png" id="13_j3pfp"]
+[ext_resource type="Script" uid="uid://def0wbb57cy2" path="res://Npc/scripts/npc_resource.gd" id="14_m4nom"]
+[ext_resource type="Texture2D" uid="uid://ctop4c1e5ap83" path="res://Player/Sprites/Indyrun_0_000.png" id="15_1eohp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wi5as"]
 texture = ExtResource("2_tek06")
@@ -484,6 +489,14 @@ terrain_set_0/terrain_0/name = "Path"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_wi5as")
 
+[sub_resource type="Resource" id="Resource_2rucc"]
+script = ExtResource("14_m4nom")
+NPC_name = "Squale"
+sprite = ExtResource("15_1eohp")
+portrait = ExtResource("13_j3pfp")
+dialogue_audio_pitch = ""
+metadata/_custom_type_script = "uid://def0wbb57cy2"
+
 [node name="02" type="Node2D"]
 script = ExtResource("1_wi5as")
 music = ExtResource("2_icgqb")
@@ -517,6 +530,28 @@ npc_resource = ExtResource("9_krbdk")
 wander_range = 4
 wander_speed = 45.0
 wander_duration = 5.0
+
+[node name="DialogInteraction" parent="Npc" instance=ExtResource("11_isjcn")]
+enabled = true
+
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("12_mxs1d")
+text = "
+Hi [b] Hero[/b]. Is that you ?"
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
+
+[node name="DialogText2" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("12_mxs1d")
+text = "
+[wave]Heck yeah it's me![/wave]"
+npc_info = SubResource("Resource_2rucc")
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
+
+[node name="DialogText3" type="Node" parent="Npc/DialogInteraction"]
+script = ExtResource("12_mxs1d")
+text = "Nice, bro!
+Happy to have a hero!"
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
 [node name="Npc2" parent="." instance=ExtResource("8_ua1y0")]
 position = Vector2(407, 149)

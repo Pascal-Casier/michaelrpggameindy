@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://spkmh2sxw0y7"
-path="res://.godot/imported/picture_bubble.svg-5ff2f4806fb6f7cd7a566e248a1cbc7d.ctex"
+path="res://.godot/imported/picture_bubble.svg-3e049a627498ac27b009b28db27f05ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Npc/sprites/npc_and_dialog/icons/picture_bubble.svg"
-dest_files=["res://.godot/imported/picture_bubble.svg-5ff2f4806fb6f7cd7a566e248a1cbc7d.ctex"]
+source_file="res://GUI/Dialog_system/icons/picture_bubble.svg"
+dest_files=["res://.godot/imported/picture_bubble.svg-3e049a627498ac27b009b28db27f05ab.ctex"]
 
 [params]
 

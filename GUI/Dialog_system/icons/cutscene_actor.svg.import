@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crduddsbosuc8"
-path="res://.godot/imported/cutscene_animation.svg-a86a5deeb15dc979da79808f7d5cc7bb.ctex"
+uid="uid://b17teeq7jt2fl"
+path="res://.godot/imported/cutscene_actor.svg-82d53f724ce09f19c02267842452bedd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Npc/sprites/npc_and_dialog/icons/cutscene_animation.svg"
-dest_files=["res://.godot/imported/cutscene_animation.svg-a86a5deeb15dc979da79808f7d5cc7bb.ctex"]
+source_file="res://GUI/Dialog_system/icons/cutscene_actor.svg"
+dest_files=["res://.godot/imported/cutscene_actor.svg-82d53f724ce09f19c02267842452bedd.ctex"]
 
 [params]
 

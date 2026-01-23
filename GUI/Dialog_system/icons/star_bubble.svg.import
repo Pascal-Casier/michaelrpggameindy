@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0nqskhy7ejdn"
-path="res://.godot/imported/question_bubble.svg-af7c9f4015c8cf6937610cbd19216396.ctex"
+uid="uid://cqng54ntdj6qu"
+path="res://.godot/imported/star_bubble.svg-5420712d4fc01ef853fb85d1ea78adf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Npc/sprites/npc_and_dialog/icons/question_bubble.svg"
-dest_files=["res://.godot/imported/question_bubble.svg-af7c9f4015c8cf6937610cbd19216396.ctex"]
+source_file="res://GUI/Dialog_system/icons/star_bubble.svg"
+dest_files=["res://.godot/imported/star_bubble.svg-5420712d4fc01ef853fb85d1ea78adf3.ctex"]
 
 [params]
 
