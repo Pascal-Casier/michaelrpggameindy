@@ -494,7 +494,7 @@ script = ExtResource("14_m4nom")
 NPC_name = "Squale"
 sprite = ExtResource("15_1eohp")
 portrait = ExtResource("13_j3pfp")
-dialogue_audio_pitch = ""
+dialogue_audio_pitch = 1.0
 metadata/_custom_type_script = "uid://def0wbb57cy2"
 
 [node name="02" type="Node2D"]
@@ -532,7 +532,6 @@ wander_speed = 45.0
 wander_duration = 5.0
 
 [node name="DialogInteraction" parent="Npc" instance=ExtResource("11_isjcn")]
-enabled = true
 
 [node name="DialogText" type="Node" parent="Npc/DialogInteraction"]
 script = ExtResource("12_mxs1d")

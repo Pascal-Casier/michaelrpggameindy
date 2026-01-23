@@ -9,5 +9,5 @@ script = ExtResource("1_maabi")
 NPC_name = "Oren"
 sprite = ExtResource("3_1hydq")
 portrait = ExtResource("1_1hydq")
-dialogue_audio_pitch = ""
+dialogue_audio_pitch = 0.5
 metadata/_custom_type_script = "uid://def0wbb57cy2"
