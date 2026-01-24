@@ -539,6 +539,7 @@ wander_duration = 5.0
 script = ExtResource("12_mxs1d")
 text = "
 Hi [b] Hero[/b]. Is that you ?"
+npc_info = ExtResource("9_krbdk")
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
 [node name="DialogText2" type="Node" parent="Npc/DialogInteraction"]
@@ -551,7 +552,8 @@ metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 [node name="DialogText3" type="Node" parent="Npc/DialogInteraction"]
 script = ExtResource("12_mxs1d")
 text = "Nice, bro!
-Happy to have a hero!"
+Happy to have a hero! "
+npc_info = ExtResource("9_krbdk")
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
 [node name="Npc2" parent="." instance=ExtResource("8_ua1y0")]
@@ -581,33 +583,40 @@ position = Vector2(91, 1)
 script = ExtResource("12_mxs1d")
 text = "
 Salut, tu peux m'aider ?"
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
 [node name="DialogChoice" type="Node" parent="Npc2/DialogInteraction"]
 script = ExtResource("19_1eohp")
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://275nj1nkdsup"
 
 [node name="DialogBranch" type="Node" parent="Npc2/DialogInteraction/DialogChoice"]
 script = ExtResource("20_2rucc")
-text = "bien sûr"
+text = "Bien sûr !"
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://bqvts7scciki8"
 
 [node name="DialogText" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("12_mxs1d")
 text = "Merci, c'est cool !"
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
 [node name="DialogText2" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("12_mxs1d")
 text = "Attention aux araignées."
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
 [node name="DialogBranch2" type="Node" parent="Npc2/DialogInteraction/DialogChoice"]
 script = ExtResource("20_2rucc")
-text = "désolé, je ne peux pas."
+text = "Désolé, je ne peux pas."
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://bqvts7scciki8"
 
 [node name="DialogText" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("12_mxs1d")
 text = "tant pis, je le ferai moi-même..."
+npc_info = ExtResource("11_q5iyu")
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
