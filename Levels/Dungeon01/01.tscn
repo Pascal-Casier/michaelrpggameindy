@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dp7vnc3mn2l3u" path="res://TileMaps/dungeon_01_tilemap.tscn" id="2_ux7ia"]
 [ext_resource type="PackedScene" uid="uid://ben7wxsmq6ih" path="res://Levels/Player_spawn.tscn" id="3_swvnj"]
 [ext_resource type="PackedScene" uid="uid://c42upklxpt6mk" path="res://Levels/level_transition.tscn" id="4_ux7ia"]
-[ext_resource type="PackedScene" uid="uid://c7iwoa6rqprav" path="res://Interactables/Dungeon/pressure_plate.tscn" id="5_swvnj"]
-[ext_resource type="PackedScene" uid="uid://c5lsxpebcnl6a" path="res://Interactables/Dungeon/barred_door.tscn" id="6_m3xjo"]
-[ext_resource type="PackedScene" uid="uid://cnokeh5jyxo50" path="res://Interactables/Dungeon/pushable_statue.tscn" id="7_4dhgi"]
+[ext_resource type="PackedScene" uid="uid://c7iwoa6rqprav" path="res://Interactables/dungeon/pressure_plate.tscn" id="5_swvnj"]
+[ext_resource type="PackedScene" uid="uid://c5lsxpebcnl6a" path="res://Interactables/dungeon/barred_door.tscn" id="6_m3xjo"]
+[ext_resource type="PackedScene" uid="uid://cnokeh5jyxo50" path="res://Interactables/dungeon/pushable_statue.tscn" id="7_4dhgi"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_2la2r")

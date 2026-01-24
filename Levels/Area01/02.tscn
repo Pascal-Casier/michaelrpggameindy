@@ -572,3 +572,24 @@ position = Vector2(78, 99)
 [node name="PatrolLocation4" parent="Npc2/NpcBehaviorPatrol" instance=ExtResource("13_isjcn")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(91, 1)
+
+[node name="DialogInteraction" parent="Npc2" instance=ExtResource("11_isjcn")]
+
+[node name="DialogText" type="Node" parent="Npc2/DialogInteraction"]
+script = ExtResource("12_mxs1d")
+text = "
+Salut, comment vas tu ?"
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
+
+[node name="DialogText2" type="Node" parent="Npc2/DialogInteraction"]
+script = ExtResource("12_mxs1d")
+text = "
+[wave]Heck yeah it's me![/wave]"
+npc_info = SubResource("Resource_2rucc")
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
+
+[node name="DialogText3" type="Node" parent="Npc2/DialogInteraction"]
+script = ExtResource("12_mxs1d")
+text = "Nice, bro!
+Happy to have a hero!"
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
