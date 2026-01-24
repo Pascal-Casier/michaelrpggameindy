@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dan7um7evubrt"]
+[gd_scene load_steps=24 format=3 uid="uid://dan7um7evubrt"]
 
 [ext_resource type="Script" uid="uid://cflv1i2ia3jge" path="res://Levels/Scripts/level.gd" id="1_wi5as"]
 [ext_resource type="PackedScene" uid="uid://c6nq37vmyij6p" path="res://TileMaps/grass01.tscn" id="1_x70af"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://djxvhjtt1ueb4" path="res://Npc/sprites/portraits/hero_portrait.png" id="13_j3pfp"]
 [ext_resource type="Script" uid="uid://def0wbb57cy2" path="res://Npc/scripts/npc_resource.gd" id="14_m4nom"]
 [ext_resource type="Texture2D" uid="uid://ctop4c1e5ap83" path="res://Player/Sprites/Indyrun_0_000.png" id="15_1eohp"]
+[ext_resource type="Script" uid="uid://275nj1nkdsup" path="res://Interactables/Dialog/Scripts/dialog_choice.gd" id="19_1eohp"]
+[ext_resource type="Script" uid="uid://bqvts7scciki8" path="res://Interactables/Dialog/Scripts/dialog_branch.gd" id="20_2rucc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wi5as"]
 texture = ExtResource("2_tek06")
@@ -578,18 +580,34 @@ position = Vector2(91, 1)
 [node name="DialogText" type="Node" parent="Npc2/DialogInteraction"]
 script = ExtResource("12_mxs1d")
 text = "
-Salut, comment vas tu ?"
+Salut, tu peux m'aider ?"
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
-[node name="DialogText2" type="Node" parent="Npc2/DialogInteraction"]
+[node name="DialogChoice" type="Node" parent="Npc2/DialogInteraction"]
+script = ExtResource("19_1eohp")
+metadata/_custom_type_script = "uid://275nj1nkdsup"
+
+[node name="DialogBranch" type="Node" parent="Npc2/DialogInteraction/DialogChoice"]
+script = ExtResource("20_2rucc")
+text = "bien sûr"
+metadata/_custom_type_script = "uid://bqvts7scciki8"
+
+[node name="DialogText" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("12_mxs1d")
-text = "
-[wave]Heck yeah it's me![/wave]"
-npc_info = SubResource("Resource_2rucc")
+text = "Merci, c'est cool !"
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
 
-[node name="DialogText3" type="Node" parent="Npc2/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("12_mxs1d")
-text = "Nice, bro!
-Happy to have a hero!"
+text = "Attention aux araignées."
+metadata/_custom_type_script = "uid://b883k1ua3mdgm"
+
+[node name="DialogBranch2" type="Node" parent="Npc2/DialogInteraction/DialogChoice"]
+script = ExtResource("20_2rucc")
+text = "désolé, je ne peux pas."
+metadata/_custom_type_script = "uid://bqvts7scciki8"
+
+[node name="DialogText" type="Node" parent="Npc2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("12_mxs1d")
+text = "tant pis, je le ferai moi-même..."
 metadata/_custom_type_script = "uid://b883k1ua3mdgm"
